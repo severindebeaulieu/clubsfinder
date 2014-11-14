@@ -22,6 +22,8 @@
 		8638E4E61A0D0F89008489B9 /* OAuthSwiftClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8638E4DD1A0D0F89008489B9 /* OAuthSwiftClient.swift */; };
 		8638E4E71A0D0F89008489B9 /* OAuthSwiftCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8638E4DE1A0D0F89008489B9 /* OAuthSwiftCredential.swift */; };
 		8638E4E81A0D0F89008489B9 /* OAuthSwiftHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8638E4DF1A0D0F89008489B9 /* OAuthSwiftHTTPRequest.swift */; };
+		865C14F71A167B5F0040D1B8 /* SearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865C14F61A167B5F0040D1B8 /* SearchResultsCell.swift */; };
+		865C14F91A16816E0040D1B8 /* Blank70.png in Resources */ = {isa = PBXBuildFile; fileRef = 865C14F81A16816E0040D1B8 /* Blank70.png */; };
 		8673ACFE1A0A4F7500D78950 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673ACFD1A0A4F7500D78950 /* Business.swift */; };
 		8673AD001A0BA4D400D78950 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673ACFF1A0BA4D400D78950 /* DetailsViewController.swift */; };
 		8673AD021A0CB78600D78950 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673AD011A0CB78600D78950 /* Track.swift */; };
@@ -53,7 +55,7 @@
 		0270481D19C8E08B00FDA1C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0270481E19C8E08B00FDA1C5 /* ClubsFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsFinderTests.swift; sourceTree = "<group>"; };
 		8636A8071A02588C005566D1 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIController.swift; path = ../APIController.swift; sourceTree = "<group>"; };
-		8636A8091A02740D005566D1 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = ../../Downloads/Blank52.png; sourceTree = "<group>"; };
+		8636A8091A02740D005566D1 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Blank52.png; path = ../../../Downloads/Blank52.png; sourceTree = "<group>"; };
 		8638E4D51A0D0F89008489B9 /* Dictionary+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+OAuthSwift.swift"; sourceTree = "<group>"; };
 		8638E4D61A0D0F89008489B9 /* NSURL+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+OAuthSwift.swift"; sourceTree = "<group>"; };
 		8638E4D71A0D0F89008489B9 /* String+OAuthSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+OAuthSwift.swift"; sourceTree = "<group>"; };
@@ -63,6 +65,8 @@
 		8638E4DD1A0D0F89008489B9 /* OAuthSwiftClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthSwiftClient.swift; sourceTree = "<group>"; };
 		8638E4DE1A0D0F89008489B9 /* OAuthSwiftCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthSwiftCredential.swift; sourceTree = "<group>"; };
 		8638E4DF1A0D0F89008489B9 /* OAuthSwiftHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthSwiftHTTPRequest.swift; sourceTree = "<group>"; };
+		865C14F61A167B5F0040D1B8 /* SearchResultsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsCell.swift; sourceTree = "<group>"; };
+		865C14F81A16816E0040D1B8 /* Blank70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank70.png; sourceTree = "<group>"; };
 		8673ACFD1A0A4F7500D78950 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		8673ACFF1A0BA4D400D78950 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		8673AD011A0CB78600D78950 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
@@ -95,7 +99,6 @@
 			children = (
 				86C8E1861A14CE9C00CB549A /* Default-568h@2x.png */,
 				8638E4D31A0D0F89008489B9 /* OAuthSwift */,
-				8636A8091A02740D005566D1 /* Blank52.png */,
 				0270480519C8E08B00FDA1C5 /* ClubsFinder */,
 				0270481B19C8E08B00FDA1C5 /* ClubsFinderTests */,
 				0270480419C8E08B00FDA1C5 /* Products */,
@@ -114,6 +117,8 @@
 		0270480519C8E08B00FDA1C5 /* ClubsFinder */ = {
 			isa = PBXGroup;
 			children = (
+				865C14FA1A16817A0040D1B8 /* Images */,
+				865C14F51A167ADE0040D1B8 /* Views */,
 				86C8E1881A14CEE700CB549A /* Base.lproj */,
 				8636A8071A02588C005566D1 /* APIController.swift */,
 				0270480819C8E08B00FDA1C5 /* AppDelegate.swift */,
@@ -190,9 +195,26 @@
 			children = (
 				8673ACFD1A0A4F7500D78950 /* Business.swift */,
 				8673AD011A0CB78600D78950 /* Track.swift */,
-				8673AD031A0CBB8000D78950 /* TrackCell.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		865C14F51A167ADE0040D1B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8673AD031A0CBB8000D78950 /* TrackCell.swift */,
+				865C14F61A167B5F0040D1B8 /* SearchResultsCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		865C14FA1A16817A0040D1B8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8636A8091A02740D005566D1 /* Blank52.png */,
+				865C14F81A16816E0040D1B8 /* Blank70.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		86C8E1881A14CEE700CB549A /* Base.lproj */ = {
@@ -290,6 +312,7 @@
 				8636A80A1A02740D005566D1 /* Blank52.png in Resources */,
 				0270481319C8E08B00FDA1C5 /* LaunchScreen.xib in Resources */,
 				86C8E1871A14CE9C00CB549A /* Default-568h@2x.png in Resources */,
+				865C14F91A16816E0040D1B8 /* Blank70.png in Resources */,
 				86C8E1951A14CEE700CB549A /* LaunchScreen.xib in Resources */,
 				0270481019C8E08B00FDA1C5 /* Images.xcassets in Resources */,
 			);
@@ -315,6 +338,7 @@
 				8638E4E11A0D0F89008489B9 /* NSURL+OAuthSwift.swift in Sources */,
 				0270480919C8E08B00FDA1C5 /* AppDelegate.swift in Sources */,
 				8638E4E61A0D0F89008489B9 /* OAuthSwiftClient.swift in Sources */,
+				865C14F71A167B5F0040D1B8 /* SearchResultsCell.swift in Sources */,
 				8636A8081A02588C005566D1 /* APIController.swift in Sources */,
 				8673ACFE1A0A4F7500D78950 /* Business.swift in Sources */,
 				8638E4E01A0D0F89008489B9 /* Dictionary+OAuthSwift.swift in Sources */,

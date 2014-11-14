@@ -14,7 +14,6 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet var appsTableView : UITableView?
     var businesses = [Business]()
     var api : APIController?
-    let kCellIdentifier : String = "SearchResultCell"
     var imageCache = [String : UIImage]()
     
     override func viewDidLoad() {
@@ -43,17 +42,19 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("SearchResultsCell") as SearchResultsCell
         
         let business = self.businesses[indexPath.row]
         
-        cell.textLabel.text = business.name
-        cell.imageView.image = UIImage(named: "Blank52")
+        cell.label1.text = business.name
+        println(business.location)
+        cell.label2.text = business.location["address"] as? String
+        cell.label3.text = business.phone
+
+        cell.imageClub.image = UIImage(named: "Blank70")
         
         // Grab the artworkUrl60 key to get an image URL for the app's thumbnail
         let urlString = business.thumbnailImageURL
-        
-        let phone = business.phone
         
         // Vérifier si notre cache d'images contient la clef. La structure est simplement un dictionnaire d'UIImages.
         //var image: UIImage? = self.imageCache.valueForKey(urlString) as? UIImage
@@ -72,7 +73,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
                     // Stocker l'image dans notre cache.
                     self.imageCache[urlString] = image
                     dispatch_async(dispatch_get_main_queue(), {
-                        cell.imageView.image = image
+                        cell.imageClub.image = image
                     })
                 }
                 else {
@@ -88,8 +89,6 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
                 }
             })
         }
-        
-        cell.detailTextLabel?.text = phone
         
         return cell
         

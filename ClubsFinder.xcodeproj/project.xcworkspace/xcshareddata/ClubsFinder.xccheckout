@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>78A8A41D-5D76-42CE-8BB4-AC7F390C44C8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ClubsFinder</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4551966A016589B825DE76D5652F3B775BF4011A</key>
+		<string>github.com:severindebeaulieu/clubsfinder.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ClubsFinder.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4551966A016589B825DE76D5652F3B775BF4011A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:severindebeaulieu/clubsfinder.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4551966A016589B825DE76D5652F3B775BF4011A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4551966A016589B825DE76D5652F3B775BF4011A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>tuto</string>
+		</dict>
+	</array>
+</dict>
+</plist>

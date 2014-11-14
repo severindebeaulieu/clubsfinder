@@ -46,7 +46,7 @@ class Business {
                 var phone = result["phone"] as? String ?? ""
                 var location = result["location"] as? Dictionary<String, AnyObject>
                 var thumbnailImageURL = result["image_url"] as? String ?? ""
-                println("\(yelp_id), \(is_closed), \(name), \(url), \(phone), \(location), \(thumbnailImageURL), ")
+//                println("\(yelp_id), \(is_closed), \(name), \(url), \(phone), \(location), \(thumbnailImageURL), ")
                 var newBusiness = Business(yelp_id: yelp_id!, is_closed: is_closed, name: name, url: url, phone: phone, location: location!, thumbnailImageURL: thumbnailImageURL)
                 businesses.append(newBusiness)
             }
