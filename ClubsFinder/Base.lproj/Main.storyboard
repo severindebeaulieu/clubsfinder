@@ -237,6 +237,19 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="t2U-d6-1ap">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="8CU-CG-fLf"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8CU-CG-fLf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="8CU-CG-fLf"/>
+                                    </mask>
+                                </variation>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnJ-RG-Xw2">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -248,10 +261,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vnJ-RG-Xw2" firstAttribute="top" secondItem="Uo8-4P-wdq" secondAttribute="bottom" constant="31" id="JZC-bq-gW6"/>
-                            <constraint firstItem="fdW-ya-NqM" firstAttribute="top" secondItem="t2U-d6-1ap" secondAttribute="bottom" constant="241" id="PKj-aS-trR"/>
                             <constraint firstItem="vnJ-RG-Xw2" firstAttribute="leading" secondItem="4Zu-Sp-B4B" secondAttribute="leadingMargin" id="jwN-fk-JmW"/>
                             <constraint firstAttribute="trailing" secondItem="t2U-d6-1ap" secondAttribute="trailing" id="lJ7-WF-4xW"/>
-                            <constraint firstItem="t2U-d6-1ap" firstAttribute="top" secondItem="vnJ-RG-Xw2" secondAttribute="bottom" constant="69" id="nXP-tN-ty9"/>
+                            <constraint firstItem="t2U-d6-1ap" firstAttribute="top" secondItem="vnJ-RG-Xw2" secondAttribute="bottom" constant="69" id="nXP-tN-ty9">
+                                <variation key="heightClass=regular" constant="48"/>
+                            </constraint>
                             <constraint firstItem="t2U-d6-1ap" firstAttribute="leading" secondItem="4Zu-Sp-B4B" secondAttribute="leading" id="qL3-4t-b9p"/>
                         </constraints>
                         <variation key="default">
@@ -265,7 +279,6 @@
                                 <exclude reference="lJ7-WF-4xW"/>
                                 <exclude reference="nXP-tN-ty9"/>
                                 <exclude reference="qL3-4t-b9p"/>
-                                <exclude reference="PKj-aS-trR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -279,7 +292,6 @@
                                 <include reference="lJ7-WF-4xW"/>
                                 <include reference="nXP-tN-ty9"/>
                                 <include reference="qL3-4t-b9p"/>
-                                <include reference="PKj-aS-trR"/>
                             </mask>
                         </variation>
                     </view>
