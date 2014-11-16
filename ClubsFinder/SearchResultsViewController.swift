@@ -46,9 +46,10 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         
         let business = self.businesses[indexPath.row]
         
-        cell.label1.text = business.name
-        println(business.location)
-        cell.label2.text = business.location["address"] as? String
+        cell.label1.text = business.name.capitalizedString
+//        println(business.location["address"])
+        
+        cell.label2.text = business.shortAddress
         cell.label3.text = business.phone
 
         cell.imageClub.image = UIImage(named: "Blank70")
@@ -84,8 +85,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         }
         else {
             dispatch_async(dispatch_get_main_queue(), {
-                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) {
-                    cellToUpdate.imageView.image = image
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? SearchResultsCell {
+                    cellToUpdate.imageClub.image = image
                 }
             })
         }

@@ -15,11 +15,11 @@ class Business {
     var name: String
     var url: String
     var phone: String
-    var location: Dictionary<String, AnyObject>
+    var location: NSDictionary
     var thumbnailImageURL: String
     
     
-    init(yelp_id: String, is_closed: Bool, name: String, url: String, phone: String, location: Dictionary<String, AnyObject>, thumbnailImageURL: String) {
+    init(yelp_id: String, is_closed: Bool, name: String, url: String, phone: String, location: NSDictionary, thumbnailImageURL: String) {
         self.yelp_id = yelp_id
         self.is_closed = is_closed
         self.name = name
@@ -46,12 +46,25 @@ class Business {
                 var phone = result["phone"] as? String ?? ""
                 var location = result["location"] as? Dictionary<String, AnyObject>
                 var thumbnailImageURL = result["image_url"] as? String ?? ""
+//                println(location)
 //                println("\(yelp_id), \(is_closed), \(name), \(url), \(phone), \(location), \(thumbnailImageURL), ")
                 var newBusiness = Business(yelp_id: yelp_id!, is_closed: is_closed, name: name, url: url, phone: phone, location: location!, thumbnailImageURL: thumbnailImageURL)
                 businesses.append(newBusiness)
             }
         }
         return businesses
+    }
+    
+    var shortAddress: String {
+        get {
+            if let address = location["address"] as? Array<String> {
+                if let neighborhoods = location["neighborhoods"] as? Array<String> {
+                    return ", ".join(address + [neighborhoods[0]])
+                }
+                return ", ".join(address)
+            }
+            return ""
+        }
     }
 }
 
