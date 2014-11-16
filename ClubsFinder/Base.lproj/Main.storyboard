@@ -176,7 +176,7 @@
                                             <outlet property="label2" destination="8Ej-c2-frx" id="rKn-Kc-nbm"/>
                                             <outlet property="label3" destination="VKr-wu-SGv" id="xKC-0T-fKS"/>
                                             <outlet property="rightLabel" destination="Aka-3B-FUM" id="kRr-Xm-DnJ"/>
-                                            <segue destination="oqt-uC-GJl" kind="show" id="zbc-wM-Cr5"/>
+                                            <segue destination="0Tz-VW-Tfg" kind="show" id="R8M-Pm-RSW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -223,76 +223,22 @@
             </objects>
             <point key="canvasLocation" x="1124" y="1007.25"/>
         </scene>
-        <!--Details View Controller-->
-        <scene sceneID="bl9-Ts-7TL">
+        <!--Business Details View Controller-->
+        <scene sceneID="vNh-uh-mFt">
             <objects>
-                <viewController storyboardIdentifier="DetailsViewController" id="oqt-uC-GJl" customClass="DetailsViewController" customModule="ClubsFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BusinessDetailsViewController" id="0Tz-VW-Tfg" customClass="BusinessDetailsViewController" customModule="ClubsFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KLq-hR-hBG"/>
-                        <viewControllerLayoutGuide type="bottom" id="rPG-zl-3gX"/>
+                        <viewControllerLayoutGuide type="top" id="Uo8-4P-wdq"/>
+                        <viewControllerLayoutGuide type="bottom" id="fdW-ya-NqM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SzR-ZQ-6o5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="4Zu-Sp-B4B">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeg-OA-nr6">
-                                <rect key="frame" x="16" y="93" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="DFf-Eq-6Ca">
-                                <rect key="frame" x="16" y="122" width="100" height="100"/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gwy-n8-M0m">
-                                <rect key="frame" x="0.0" y="240" width="600" height="360"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrackCell" id="1dv-hV-Bcw" customClass="TrackCell" customModule="ClubsFinder" customModuleProvider="target">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1dv-hV-Bcw" id="B3f-h2-hCB">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="▶️" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dN-l6-Cmz">
-                                                    <rect key="frame" x="8" y="11" width="23" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track's Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQ9-JT-t6z">
-                                                    <rect key="frame" x="46" y="12" width="546" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="playIcon" destination="6dN-l6-Cmz" id="Z5j-nm-Mn1"/>
-                                            <outlet property="titleLabel" destination="XQ9-JT-t6z" id="0Np-33-OSy"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="oqt-uC-GJl" id="RGn-IP-vTn"/>
-                                    <outlet property="delegate" destination="oqt-uC-GJl" id="0CF-sU-JhX"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="albumCover" destination="DFf-Eq-6Ca" id="R6V-GK-WlO"/>
-                        <outlet property="titleLabel" destination="eeg-OA-nr6" id="qC6-eC-b7i"/>
-                        <outlet property="tracksTableView" destination="gwy-n8-M0m" id="OLk-FX-776"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PMr-dL-3JV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nzg-WU-d3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="1011"/>
+            <point key="canvasLocation" x="1832" y="1007.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l4V-WV-sBA">
