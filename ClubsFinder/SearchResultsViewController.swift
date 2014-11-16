@@ -2,8 +2,8 @@
 //  SearchResultsViewController.swift
 //  MusicPlayer
 //
-//  Created by Jameson Quave on 9/16/14.
-//  Copyright (c) 2014 JQ Software LLC. All rights reserved.
+//  Created by Séverin de Beaulieu on 30/10/2014.
+//  Copyright (c) 2014. All rights reserved.
 //
 
 import UIKit
@@ -51,6 +51,11 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         
         cell.label2.text = business.shortAddress
         cell.label3.text = business.phone
+        
+        cell.imageClub.layer.cornerRadius = 8;
+        cell.imageClub.layer.borderWidth = 2;
+        
+        cell.imageClub.clipsToBounds = true;
 
         cell.imageClub.image = UIImage(named: "Blank70")
         

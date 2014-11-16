@@ -2,8 +2,8 @@
 //  DetailsViewController.swift
 //  MusicPlayer
 //
-//  Created by Séverin de Beaulieu on 06/11/2014.
-//  Copyright (c) 2014 JQ Software LLC. All rights reserved.
+//  Created by Séverin de Beaulieu on 30/10/2014.
+//  Copyright (c) 2014. All rights reserved.
 //
 
 import UIKit

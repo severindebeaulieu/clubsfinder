@@ -272,7 +272,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0600;
-				ORGANIZATIONNAME = "JQ Software LLC";
+				ORGANIZATIONNAME = "Apik56";
 				TargetAttributes = {
 					0270480219C8E08B00FDA1C5 = {
 						CreatedOnToolsVersion = 6.0;
