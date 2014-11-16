@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 
 class Business {
@@ -64,6 +65,46 @@ class Business {
                 return ", ".join(address)
             }
             return ""
+        }
+    }
+    
+    var streetAddress: String {
+        get {
+            if let address = location["address"] as? Array<String> {
+                if let postcode = location["postal_code"] as? String {
+                    return ", ".join(address) + ", \(postcode)"
+                }
+                return ", ".join(address)
+            }
+            return ""
+        }
+    }
+    
+    var latitude: Double? {
+        get {
+
+            if let coordinate = location["coordinate"] as? NSDictionary {
+                return (coordinate["latitude"] as Double)
+            }
+
+            return nil
+        }
+    }
+    
+    var longitude: Double? {
+        get {
+            
+            if let coordinate = location["coordinate"] as? NSDictionary {
+                return (coordinate["longitude"] as Double)
+            }
+            
+            return nil
+        }
+    }
+    
+    var mapLocation: CLLocation {
+        get {
+            return CLLocation(latitude: self.latitude!, longitude: self.longitude!)
         }
     }
 }

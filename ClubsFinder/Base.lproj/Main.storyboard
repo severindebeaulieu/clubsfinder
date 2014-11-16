@@ -232,13 +232,66 @@
                         <viewControllerLayoutGuide type="bottom" id="fdW-ya-NqM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Zu-Sp-B4B">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="t2U-d6-1ap">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnJ-RG-Xw2">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vnJ-RG-Xw2" firstAttribute="top" secondItem="Uo8-4P-wdq" secondAttribute="bottom" constant="31" id="JZC-bq-gW6"/>
+                            <constraint firstItem="fdW-ya-NqM" firstAttribute="top" secondItem="t2U-d6-1ap" secondAttribute="bottom" constant="241" id="PKj-aS-trR"/>
+                            <constraint firstItem="vnJ-RG-Xw2" firstAttribute="leading" secondItem="4Zu-Sp-B4B" secondAttribute="leadingMargin" id="jwN-fk-JmW"/>
+                            <constraint firstAttribute="trailing" secondItem="t2U-d6-1ap" secondAttribute="trailing" id="lJ7-WF-4xW"/>
+                            <constraint firstItem="t2U-d6-1ap" firstAttribute="top" secondItem="vnJ-RG-Xw2" secondAttribute="bottom" constant="69" id="nXP-tN-ty9"/>
+                            <constraint firstItem="t2U-d6-1ap" firstAttribute="leading" secondItem="4Zu-Sp-B4B" secondAttribute="leading" id="qL3-4t-b9p"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="t2U-d6-1ap"/>
+                                <exclude reference="vnJ-RG-Xw2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="JZC-bq-gW6"/>
+                                <exclude reference="jwN-fk-JmW"/>
+                                <exclude reference="lJ7-WF-4xW"/>
+                                <exclude reference="nXP-tN-ty9"/>
+                                <exclude reference="qL3-4t-b9p"/>
+                                <exclude reference="PKj-aS-trR"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="t2U-d6-1ap"/>
+                                <include reference="vnJ-RG-Xw2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="JZC-bq-gW6"/>
+                                <include reference="jwN-fk-JmW"/>
+                                <include reference="lJ7-WF-4xW"/>
+                                <include reference="nXP-tN-ty9"/>
+                                <include reference="qL3-4t-b9p"/>
+                                <include reference="PKj-aS-trR"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="businessMap" destination="t2U-d6-1ap" id="M13-GP-rET"/>
+                        <outlet property="name" destination="vnJ-RG-Xw2" id="Hgq-hz-KpF"/>
+                        <outlet property="view" destination="t2U-d6-1ap" id="4eP-WP-4mW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzg-WU-d3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832" y="1007.25"/>
+            <point key="canvasLocation" x="1833" y="1007.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l4V-WV-sBA">
