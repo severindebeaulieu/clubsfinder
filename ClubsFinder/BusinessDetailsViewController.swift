@@ -17,6 +17,8 @@ class BusinessDetailsViewController: UIViewController {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var businessMap: MKMapView!
+    @IBOutlet weak var barsTab: UITableView!
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -50,14 +52,24 @@ class BusinessDetailsViewController: UIViewController {
         }
     }
     
-//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 3
-//    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
     
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        println(indexPath.row)
-//        
-//        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as BusinessDetailsBarsCell
-//        return cell
-//    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        println(indexPath.row)
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Get the row data for the selected row
+        
+        var alert: UIAlertView = UIAlertView()
+        alert.title = "Action"
+        alert.message = "\(indexPath.row)"
+        alert.addButtonWithTitle("Ok")
+        alert.show()
+    }
 }

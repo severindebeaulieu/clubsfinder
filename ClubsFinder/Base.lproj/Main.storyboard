@@ -260,19 +260,72 @@
                                     <outlet property="delegate" destination="0Tz-VW-Tfg" id="0sI-ps-MhN"/>
                                 </connections>
                             </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="00h-mb-qY0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="cYQ-22-vMX"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BarsCell" textLabel="tbU-sD-oqc" detailTextLabel="mMq-K1-rTB" style="IBUITableViewCellStyleValue1" id="XoZ-wD-9R6">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XoZ-wD-9R6" id="i4j-3o-Juh">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tbU-sD-oqc">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mMq-K1-rTB">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cYQ-22-vMX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="cYQ-22-vMX"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="0Tz-VW-Tfg" id="hE9-tz-E9y"/>
+                                    <outlet property="delegate" destination="0Tz-VW-Tfg" id="lQN-Yy-Xhm"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="00h-mb-qY0" firstAttribute="trailing" secondItem="K0U-T3-Pk0" secondAttribute="trailing" id="6u8-hC-6gf"/>
                             <constraint firstAttribute="trailing" secondItem="K0U-T3-Pk0" secondAttribute="trailing" id="Dpw-gT-LgI"/>
                             <constraint firstItem="K0U-T3-Pk0" firstAttribute="top" secondItem="vnJ-RG-Xw2" secondAttribute="bottom" constant="34" id="JF5-Ty-oP8"/>
+                            <constraint firstItem="00h-mb-qY0" firstAttribute="leading" secondItem="K0U-T3-Pk0" secondAttribute="leading" id="MTE-nH-MZb"/>
                             <constraint firstItem="vnJ-RG-Xw2" firstAttribute="leading" secondItem="4Zu-Sp-B4B" secondAttribute="leadingMargin" id="fcE-bc-QTT"/>
                             <constraint firstItem="vnJ-RG-Xw2" firstAttribute="top" secondItem="Uo8-4P-wdq" secondAttribute="bottom" constant="30" id="iww-Qq-aLd"/>
+                            <constraint firstItem="00h-mb-qY0" firstAttribute="top" secondItem="K0U-T3-Pk0" secondAttribute="bottom" constant="8" symbolic="YES" id="xfd-Vh-d5X"/>
                             <constraint firstItem="K0U-T3-Pk0" firstAttribute="leading" secondItem="4Zu-Sp-B4B" secondAttribute="leading" id="zl3-CQ-zXe"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="vnJ-RG-Xw2"/>
                                 <exclude reference="K0U-T3-Pk0"/>
+                                <exclude reference="00h-mb-qY0"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="fcE-bc-QTT"/>
@@ -280,12 +333,16 @@
                                 <exclude reference="Dpw-gT-LgI"/>
                                 <exclude reference="JF5-Ty-oP8"/>
                                 <exclude reference="zl3-CQ-zXe"/>
+                                <exclude reference="6u8-hC-6gf"/>
+                                <exclude reference="MTE-nH-MZb"/>
+                                <exclude reference="xfd-Vh-d5X"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="vnJ-RG-Xw2"/>
                                 <include reference="K0U-T3-Pk0"/>
+                                <include reference="00h-mb-qY0"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="fcE-bc-QTT"/>
@@ -293,10 +350,14 @@
                                 <include reference="Dpw-gT-LgI"/>
                                 <include reference="JF5-Ty-oP8"/>
                                 <include reference="zl3-CQ-zXe"/>
+                                <include reference="6u8-hC-6gf"/>
+                                <include reference="MTE-nH-MZb"/>
+                                <include reference="xfd-Vh-d5X"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="barsTab" destination="00h-mb-qY0" id="nRc-UM-O8U"/>
                         <outlet property="businessMap" destination="K0U-T3-Pk0" id="A6C-lx-WvA"/>
                         <outlet property="name" destination="vnJ-RG-Xw2" id="Hgq-hz-KpF"/>
                     </connections>
