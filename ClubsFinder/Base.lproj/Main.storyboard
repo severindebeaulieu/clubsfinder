@@ -238,16 +238,16 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="t2U-d6-1ap">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="cxd-v2-UKJ"/>
+                                    <constraint firstAttribute="height" constant="280" id="ubv-7P-P2N"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="cxd-v2-UKJ"/>
+                                        <exclude reference="ubv-7P-P2N"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="constraints">
-                                        <include reference="cxd-v2-UKJ"/>
+                                        <include reference="ubv-7P-P2N"/>
                                     </mask>
                                 </variation>
                             </mapView>
@@ -260,11 +260,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vnJ-RG-Xw2" firstAttribute="top" secondItem="Uo8-4P-wdq" secondAttribute="bottom" constant="31" id="97c-Cu-O1f"/>
-                            <constraint firstItem="vnJ-RG-Xw2" firstAttribute="leading" secondItem="4Zu-Sp-B4B" secondAttribute="leadingMargin" id="fzI-ls-Avs"/>
-                            <constraint firstAttribute="trailing" secondItem="t2U-d6-1ap" secondAttribute="trailing" id="pnU-lX-f0i"/>
-                            <constraint firstItem="t2U-d6-1ap" firstAttribute="leading" secondItem="4Zu-Sp-B4B" secondAttribute="leading" id="qmg-Zk-l1f"/>
-                            <constraint firstItem="t2U-d6-1ap" firstAttribute="top" secondItem="vnJ-RG-Xw2" secondAttribute="bottom" constant="48" id="tym-04-bqq"/>
+                            <constraint firstItem="t2U-d6-1ap" firstAttribute="top" secondItem="vnJ-RG-Xw2" secondAttribute="bottom" constant="49" id="fM5-2L-PfO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="t2U-d6-1ap" secondAttribute="trailing" constant="-16" id="fPj-O4-jiB"/>
+                            <constraint firstItem="vnJ-RG-Xw2" firstAttribute="leading" secondItem="4Zu-Sp-B4B" secondAttribute="leadingMargin" id="fcE-bc-QTT"/>
+                            <constraint firstItem="vnJ-RG-Xw2" firstAttribute="top" secondItem="Uo8-4P-wdq" secondAttribute="bottom" constant="30" id="iww-Qq-aLd"/>
+                            <constraint firstAttribute="centerX" secondItem="t2U-d6-1ap" secondAttribute="centerX" id="z4z-mx-Lb6"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -272,11 +272,11 @@
                                 <exclude reference="vnJ-RG-Xw2"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="97c-Cu-O1f"/>
-                                <exclude reference="fzI-ls-Avs"/>
-                                <exclude reference="pnU-lX-f0i"/>
-                                <exclude reference="qmg-Zk-l1f"/>
-                                <exclude reference="tym-04-bqq"/>
+                                <exclude reference="fcE-bc-QTT"/>
+                                <exclude reference="iww-Qq-aLd"/>
+                                <exclude reference="fM5-2L-PfO"/>
+                                <exclude reference="fPj-O4-jiB"/>
+                                <exclude reference="z4z-mx-Lb6"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -285,11 +285,11 @@
                                 <include reference="vnJ-RG-Xw2"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="97c-Cu-O1f"/>
-                                <include reference="fzI-ls-Avs"/>
-                                <include reference="pnU-lX-f0i"/>
-                                <include reference="qmg-Zk-l1f"/>
-                                <include reference="tym-04-bqq"/>
+                                <include reference="fcE-bc-QTT"/>
+                                <include reference="iww-Qq-aLd"/>
+                                <include reference="fM5-2L-PfO"/>
+                                <include reference="fPj-O4-jiB"/>
+                                <include reference="z4z-mx-Lb6"/>
                             </mask>
                         </variation>
                     </view>

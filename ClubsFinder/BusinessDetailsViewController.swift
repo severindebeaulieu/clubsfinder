@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class BusinessDetailsViewController: UIViewController, MKMapViewDelegate {
+class BusinessDetailsViewController: UIViewController {
     
     var business: Business!
     
@@ -23,7 +23,6 @@ class BusinessDetailsViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         self.navigationItem.title = business?.name
-        self.businessMap.delegate = self
         
         let annotation = MKPointAnnotation()
         
@@ -48,7 +47,5 @@ class BusinessDetailsViewController: UIViewController, MKMapViewDelegate {
             })
         }
         
-        self.businessMap.layer.cornerRadius = 9.0
-        self.businessMap.layer.masksToBounds = true
     }
 }
