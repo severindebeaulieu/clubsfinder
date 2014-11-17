@@ -9,13 +9,14 @@
 import UIKit
 import MapKit
 
-class BusinessDetailsViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate {
+class BusinessDetailsViewController: UIViewController {
     
     var business: Business!
     
+    let kCellIdentifier: String = "BarsCell"
+    
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var businessMap: MKMapView!
-    @IBOutlet weak var actionBars: UITableView!
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -23,7 +24,7 @@ class BusinessDetailsViewController: UIViewController, MKMapViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = business?.name
+        self.navigationItem.title = business?.name.capitalizedString
         
         let annotation = MKPointAnnotation()
         
@@ -47,6 +48,16 @@ class BusinessDetailsViewController: UIViewController, MKMapViewDelegate, UITabl
                 }
             })
         }
-        
     }
+    
+//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 3
+//    }
+    
+//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        println(indexPath.row)
+//        
+//        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as BusinessDetailsBarsCell
+//        return cell
+//    }
 }

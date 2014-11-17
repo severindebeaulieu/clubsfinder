@@ -41,6 +41,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        println(indexPath.row)
         
         let cell = tableView.dequeueReusableCellWithIdentifier("SearchResultsCell") as SearchResultsCell
         
@@ -100,17 +101,6 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     
-//    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-//        // Obtenir les données pour la ligne sélectionnée
-//        var rowData: NSDictionary = self.albums[indexPath.row]
-//        
-//        
-//        var alert: UIAlertView = UIAlertView()
-//        alert.title = rowData.name
-//        alert.message = formattedPrice
-//        alert.addButtonWithTitle("Ok")
-//        alert.show()
-//    }
     
     // The APIControllerProtocol method
     func didReceiveAPIResults(results: NSDictionary) {
@@ -123,10 +113,10 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var detailsViewController: BusinessDetailsViewController = segue.destinationViewController as BusinessDetailsViewController
+        var bDetailsViewController: BusinessDetailsViewController = segue.destinationViewController as BusinessDetailsViewController
         var businessIndex = appsTableView!.indexPathForSelectedRow()!.row
         var selectedBusiness = self.businesses[businessIndex]
-        detailsViewController.business = selectedBusiness
+        bDetailsViewController.business = selectedBusiness
     }
     
 
