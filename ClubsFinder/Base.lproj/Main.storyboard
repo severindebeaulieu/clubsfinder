@@ -250,6 +250,9 @@
                                         <include reference="ubv-7P-P2N"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="4Zu-Sp-B4B" id="pDe-2X-tJh"/>
+                                </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnJ-RG-Xw2">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -257,12 +260,23 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cDP-2R-qix">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4Zu-Sp-B4B" id="eWy-cK-6IE"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cDP-2R-qix" firstAttribute="top" secondItem="t2U-d6-1ap" secondAttribute="bottom" constant="8" symbolic="YES" id="6yS-jw-4Ul"/>
+                            <constraint firstItem="cDP-2R-qix" firstAttribute="trailing" secondItem="t2U-d6-1ap" secondAttribute="trailing" id="RLu-GY-1bN"/>
+                            <constraint firstItem="fdW-ya-NqM" firstAttribute="top" secondItem="cDP-2R-qix" secondAttribute="bottom" constant="148" id="dpa-Fp-I73"/>
                             <constraint firstItem="t2U-d6-1ap" firstAttribute="top" secondItem="vnJ-RG-Xw2" secondAttribute="bottom" constant="49" id="fM5-2L-PfO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="t2U-d6-1ap" secondAttribute="trailing" constant="-16" id="fPj-O4-jiB"/>
                             <constraint firstItem="vnJ-RG-Xw2" firstAttribute="leading" secondItem="4Zu-Sp-B4B" secondAttribute="leadingMargin" id="fcE-bc-QTT"/>
+                            <constraint firstItem="cDP-2R-qix" firstAttribute="leading" secondItem="t2U-d6-1ap" secondAttribute="leading" id="io2-EC-Wr7"/>
                             <constraint firstItem="vnJ-RG-Xw2" firstAttribute="top" secondItem="Uo8-4P-wdq" secondAttribute="bottom" constant="30" id="iww-Qq-aLd"/>
                             <constraint firstAttribute="centerX" secondItem="t2U-d6-1ap" secondAttribute="centerX" id="z4z-mx-Lb6"/>
                         </constraints>
@@ -270,6 +284,7 @@
                             <mask key="subviews">
                                 <exclude reference="t2U-d6-1ap"/>
                                 <exclude reference="vnJ-RG-Xw2"/>
+                                <exclude reference="cDP-2R-qix"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="fcE-bc-QTT"/>
@@ -277,12 +292,17 @@
                                 <exclude reference="fM5-2L-PfO"/>
                                 <exclude reference="fPj-O4-jiB"/>
                                 <exclude reference="z4z-mx-Lb6"/>
+                                <exclude reference="6yS-jw-4Ul"/>
+                                <exclude reference="RLu-GY-1bN"/>
+                                <exclude reference="io2-EC-Wr7"/>
+                                <exclude reference="dpa-Fp-I73"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="t2U-d6-1ap"/>
                                 <include reference="vnJ-RG-Xw2"/>
+                                <include reference="cDP-2R-qix"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="fcE-bc-QTT"/>
@@ -290,10 +310,15 @@
                                 <include reference="fM5-2L-PfO"/>
                                 <include reference="fPj-O4-jiB"/>
                                 <include reference="z4z-mx-Lb6"/>
+                                <include reference="6yS-jw-4Ul"/>
+                                <include reference="RLu-GY-1bN"/>
+                                <include reference="io2-EC-Wr7"/>
+                                <include reference="dpa-Fp-I73"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="actionBars" destination="cDP-2R-qix" id="S6c-iA-b5o"/>
                         <outlet property="businessMap" destination="t2U-d6-1ap" id="M13-GP-rET"/>
                         <outlet property="name" destination="vnJ-RG-Xw2" id="Hgq-hz-KpF"/>
                         <outlet property="view" destination="t2U-d6-1ap" id="4eP-WP-4mW"/>

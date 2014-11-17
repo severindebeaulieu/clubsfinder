@@ -9,12 +9,13 @@
 import UIKit
 import MapKit
 
-class BusinessDetailsViewController: UIViewController {
+class BusinessDetailsViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate {
     
     var business: Business!
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var businessMap: MKMapView!
+    @IBOutlet weak var actionBars: UITableView!
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
