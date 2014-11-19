@@ -60,16 +60,31 @@ class BusinessDetailsViewController: UIViewController {
         println(indexPath.row)
         
         let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
+        switch(indexPath.row) {
+        case 0:
+            cell.textLabel.text = "✉️    \(business.streetAddress)"
+        case 1:
+            cell.textLabel.text = "🚘    Itinéraire"
+        case 2:
+            cell.textLabel.text = "📞    \(business.phone)"
+        default:
+            cell.textLabel.text = ""
+        }
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Get the row data for the selected row
         
-        var alert: UIAlertView = UIAlertView()
-        alert.title = "Action"
-        alert.message = "\(indexPath.row)"
-        alert.addButtonWithTitle("Ok")
-        alert.show()
+        switch(indexPath.row) {
+        case 0:
+            return
+        case 1:
+            UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?daddr=\(business.streetAddress)")!)
+        case 2:
+            UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(business.phone)")!)
+        default:
+            return
+        }
     }
 }

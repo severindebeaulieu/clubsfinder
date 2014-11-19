@@ -135,17 +135,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="K0U-T3-Pk0">
-                                <rect key="frame" x="0.0" y="149" width="600" height="298"/>
+                            <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="K0U-T3-Pk0">
+                                <rect key="frame" x="0.0" y="149" width="600" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="298" id="iUw-YX-9Q9"/>
+                                    <constraint firstAttribute="height" constant="150" id="iUw-YX-9Q9"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="0Tz-VW-Tfg" id="0sI-ps-MhN"/>
                                 </connections>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="00h-mb-qY0">
-                                <rect key="frame" x="0.0" y="455" width="600" height="135"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="00h-mb-qY0">
+                                <rect key="frame" x="0.0" y="307" width="600" height="135"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" id="cYQ-22-vMX"/>
