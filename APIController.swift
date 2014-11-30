@@ -8,7 +8,7 @@
 import UIKit
 
 protocol APIControllerProtocol {
-    func didReceiveAPIResults(results: NSDictionary)
+    func didReceiveAPIResults(results: NSMutableArray)
 }
 
 class APIController {
@@ -20,8 +20,10 @@ class APIController {
         self.client = OAuthSwiftClient(consumerKey: "ovEqSgqjunCWISBgLt1cUw", consumerSecret: "uTKwErEH6wub6pAWVG1zQ-V0dTQ", accessToken: "y_PR976w4FQy5i-FeAUEayyTuOnfgf8q", accessTokenSecret: "btEOld55Rg97lLb-diw2IBYmvA0")
     }
     
-    func yelpClubsIn(town: String) {
-        var parameters =  ["term": "Dance Clubs", "location": town]
+    //Function to have more than 20 results
+    func yelpClubsInLoop(town: String, offset: Int, limit: Int, businesses: NSMutableArray) {
+        var businessesTmp: NSArray = []
+        var parameters =  ["term": "Dance Clubs", "location": town, "offset": "\(offset)", "limit": "\(limit)"]
         self.client.get("http://api.yelp.com/v2/search", parameters: parameters, success: {
             data, response in
             let responseString = NSString(data: data, encoding: NSUTF8StringEncoding) as String
@@ -31,8 +33,18 @@ class APIController {
                 // If there is an error parsing JSON, print it to the console
                 println("JSON Error \(err!.localizedDescription)")
             }
-            self.delegate.didReceiveAPIResults(jsonResult)
+            //Add of 20 businesses to final array
+            businessesTmp = jsonResult["businesses"] as NSArray
+            businesses.addObjectsFromArray(businessesTmp)
             
+            //If still results, we call the API again
+            if (businessesTmp.count > 0) {
+                var newOffset = offset + limit
+                self.yelpClubsInLoop(town, offset: newOffset, limit: limit, businesses: businesses)
+            } else {
+                //When no more results, we call the delegate to print the array
+                self.delegate.didReceiveAPIResults(businesses)
+            }
             },
             failure: {
                 error in
@@ -40,8 +52,12 @@ class APIController {
         })
     }
     
-    func lookupAlbum(collectionId: Int) {
-//        get("https://itunes.apple.com/lookup?id=\(collectionId)&entity=song")
+    
+    func yelpClubsIn(town: String) {
+        var offset = 0
+        var limit = 20
+        var businessesTmp: NSMutableArray = NSMutableArray()
+        yelpClubsInLoop(town, offset: offset, limit: limit, businesses: businessesTmp)
     }
     
 }

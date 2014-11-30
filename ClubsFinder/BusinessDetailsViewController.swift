@@ -80,7 +80,7 @@ class BusinessDetailsViewController: UIViewController {
         case 0:
             return
         case 1:
-            UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?daddr=\(business.streetAddress)")!)
+            UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?saddr=Current+Location&daddr=\(business.streetAddress.urlEncodedStringWithEncoding(NSUTF8StringEncoding))")!)
         case 2:
             UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(business.phone)")!)
         default:

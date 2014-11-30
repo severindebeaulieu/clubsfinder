@@ -20,7 +20,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
         api = APIController(delegate: self)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        api!.yelpClubsIn("Paris")
+        api!.yelpClubsIn("Morbihan")
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,12 +29,12 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     // Animation
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
-        UIView.animateWithDuration(0.25, animations: {
-            cell.layer.transform = CATransform3DMakeScale(1,1,1)
-        })
-    }
+//    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+//        UIView.animateWithDuration(0.25, animations: {
+//            cell.layer.transform = CATransform3DMakeScale(1,1,1)
+//        })
+//    }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return businesses.count
@@ -63,38 +63,43 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         // Grab the artworkUrl60 key to get an image URL for the app's thumbnail
         let urlString = business.thumbnailImageURL
         
-        // Vérifier si notre cache d'images contient la clef. La structure est simplement un dictionnaire d'UIImages.
-        //var image: UIImage? = self.imageCache.valueForKey(urlString) as? UIImage
-        var image = self.imageCache[urlString]
+        //Si on a une photo pour le business
+        if (urlString != "") {
         
-        if( image == nil ) {
-            // Si l'image n'existe pas, nous devons la télécharger.
-            var imgURL: NSURL? = NSURL(string: urlString)
+            // Vérifier si notre cache d'images contient la clef. La structure est simplement un dictionnaire d'UIImages.
+            //var image: UIImage? = self.imageCache.valueForKey(urlString) as? UIImage
+            var image = self.imageCache[urlString]
             
-            // Télécharger un NSData contenant l'image de l'URL.
-            let request: NSURLRequest = NSURLRequest(URL: imgURL!)
-            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
-                if error == nil {
-                    image = UIImage(data: data)
-                    
-                    // Stocker l'image dans notre cache.
-                    self.imageCache[urlString] = image
-                    dispatch_async(dispatch_get_main_queue(), {
-                        cell.imageClub.image = image
-                    })
-                }
-                else {
-                    println("Error: \(error.localizedDescription)")
-                }
-            })
+            if( image == nil ) {
+                // Si l'image n'existe pas, nous devons la télécharger.
+                var imgURL: NSURL? = NSURL(string: urlString)
+                
+                // Télécharger un NSData contenant l'image de l'URL.
+                let request: NSURLRequest = NSURLRequest(URL: imgURL!)
+                NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!,error: NSError!) -> Void in
+                    if error == nil {
+                        image = UIImage(data: data)
+                        
+                        // Stocker l'image dans notre cache.
+                        self.imageCache[urlString] = image
+                        dispatch_async(dispatch_get_main_queue(), {
+                            cell.imageClub.image = image
+                        })
+                    }
+                    else {
+                        println("Error: \(error.localizedDescription)")
+                    }
+                })
+                
+            }
+            else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? SearchResultsCell {
+                        cellToUpdate.imageClub.image = image
+                    }
+                })
+            }
             
-        }
-        else {
-            dispatch_async(dispatch_get_main_queue(), {
-                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? SearchResultsCell {
-                    cellToUpdate.imageClub.image = image
-                }
-            })
         }
         
         return cell
@@ -103,10 +108,9 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     
     
     // The APIControllerProtocol method
-    func didReceiveAPIResults(results: NSDictionary) {
-        var resultsArr: NSArray = results["businesses"] as NSArray
+    func didReceiveAPIResults(results: NSMutableArray) {
         dispatch_async(dispatch_get_main_queue(), {
-            self.businesses = Business.businessesWithJSON(resultsArr)
+            self.businesses = Business.businessesWithJSON(results)
             self.appsTableView!.reloadData()
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         })
