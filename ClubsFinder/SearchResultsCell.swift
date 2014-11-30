@@ -13,7 +13,6 @@ class SearchResultsCell: UITableViewCell {
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
-    @IBOutlet weak var rightLabel: UILabel!
     @IBOutlet weak var imageClub: UIImageView!
     
     override func awakeFromNib() {
