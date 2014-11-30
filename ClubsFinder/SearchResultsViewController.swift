@@ -117,10 +117,14 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var bDetailsViewController: BusinessDetailsViewController = segue.destinationViewController as BusinessDetailsViewController
-        var businessIndex = appsTableView!.indexPathForSelectedRow()!.row
-        var selectedBusiness = self.businesses[businessIndex]
-        bDetailsViewController.business = selectedBusiness
+        if (segue.destinationViewController is BusinessDetailsViewController) {
+            var bDetailsViewController: BusinessDetailsViewController = segue.destinationViewController as BusinessDetailsViewController
+            var businessIndex = appsTableView!.indexPathForSelectedRow()!.row
+            var selectedBusiness = self.businesses[businessIndex]
+            bDetailsViewController.business = selectedBusiness
+        } else {
+            println(segue.destinationViewController)
+        }
     }
     
 
