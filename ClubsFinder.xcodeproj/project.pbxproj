@@ -41,7 +41,7 @@
 			containerPortal = 027047FB19C8E08B00FDA1C5 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0270480219C8E08B00FDA1C5;
-			remoteInfo = MusicPlayer;
+			remoteInfo = ClubsFinder;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -249,7 +249,7 @@
 			dependencies = (
 			);
 			name = ClubsFinder;
-			productName = MusicPlayer;
+			productName = ClubsFinder;
 			productReference = 0270480319C8E08B00FDA1C5 /* ClubsFinder.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -267,7 +267,7 @@
 				0270481A19C8E08B00FDA1C5 /* PBXTargetDependency */,
 			);
 			name = ClubsFinderTests;
-			productName = MusicPlayerTests;
+			productName = ClubsFinderTests;
 			productReference = 0270481819C8E08B00FDA1C5 /* ClubsFinderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};

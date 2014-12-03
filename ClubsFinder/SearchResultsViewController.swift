@@ -1,6 +1,6 @@
 //
 //  SearchResultsViewController.swift
-//  MusicPlayer
+//  ClubsFinder
 //
 //  Created by Séverin de Beaulieu on 30/10/2014.
 //  Copyright (c) 2014. All rights reserved.
@@ -16,18 +16,28 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     var api : APIController?
     var imageCache = [String : UIImage]()
     var userLocation: UserLocation!
+    var offset = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         api = APIController(delegate: self)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         self.userLocation = UserLocation()
-        api!.yelpClubsIn("Paris", optionalParams: getOptionalParameters())
+        api!.yelpClubsIn("Paris", optionalParams: getOptionalParameters(), offset: self.offset, limit: 20)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        var endScolling = scrollView.contentOffset.y + scrollView.frame.size.height
+        if (endScolling >= scrollView.contentSize.height) {
+            println("Refresh")
+            self.offset += 20
+            api!.yelpClubsIn("Paris", optionalParams: getOptionalParameters(), offset: self.offset, limit: 20)
+        }
     }
     
     // Animation
@@ -118,7 +128,10 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     // The APIControllerProtocol method
     func didReceiveAPIResults(results: NSMutableArray) {
         dispatch_async(dispatch_get_main_queue(), {
-            self.businesses = Business.businessesWithJSON(results)
+            var newBusinesses = Business.businessesWithJSON(results)
+            for businesslol in newBusinesses {
+                self.businesses.append(businesslol)
+            }
             self.appsTableView!.reloadData()
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         })
@@ -127,7 +140,8 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     // Application of filters
     func onFiltersDone(controller: FiltersViewController) {
         self.businesses = []
-        api!.yelpClubsIn("Paris", optionalParams: getOptionalParameters())
+        self.offset = 0
+        api!.yelpClubsIn("Paris", optionalParams: getOptionalParameters(), offset: self.offset, limit: 20)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
