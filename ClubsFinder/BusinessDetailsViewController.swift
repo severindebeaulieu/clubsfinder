@@ -62,13 +62,13 @@ class BusinessDetailsViewController: UIViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
         switch(indexPath.row) {
         case 0:
-            cell.textLabel.text = "✉️    \(business.streetAddress)"
+            cell.textLabel?.text = "✉️    \(business.streetAddress)"
         case 1:
-            cell.textLabel.text = "🚘    Itinéraire"
+            cell.textLabel?.text = "🚘    Itinéraire"
         case 2:
-            cell.textLabel.text = "📞    \(business.phone)"
+            cell.textLabel?.text = "📞    \(business.phone)"
         default:
-            cell.textLabel.text = ""
+            cell.textLabel?.text = ""
         }
         return cell
     }

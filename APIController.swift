@@ -21,10 +21,11 @@ class APIController {
     }
     
     //Function to have more than 20 results
-    func yelpClubsInLoop(town: String, offset: Int, limit: Int, businesses: NSMutableArray) {
+    func yelpClubsInLoop(town: String, offset: Int, limit: Int, businesses: NSMutableArray, otherParams: Dictionary<String, String>) {
         var businessesTmp: NSArray = []
         var parameters =  ["term": "Dance Clubs", "location": town, "offset": "\(offset)", "limit": "\(limit)"]
-        self.client.get("http://api.yelp.com/v2/search", parameters: parameters, success: {
+        println(parameters.join(otherParams))
+        self.client.get("http://api.yelp.com/v2/search", parameters: parameters.join(otherParams), success: {
             data, response in
             let responseString = NSString(data: data, encoding: NSUTF8StringEncoding) as String
             var err: NSError?
@@ -40,7 +41,7 @@ class APIController {
             //If still results, we call the API again
             if (businessesTmp.count > 0) {
                 var newOffset = offset + limit
-                self.yelpClubsInLoop(town, offset: newOffset, limit: limit, businesses: businesses)
+                self.yelpClubsInLoop(town, offset: newOffset, limit: limit, businesses: businesses, otherParams: otherParams)
             } else {
                 //When no more results, we call the delegate to print the array
                 self.delegate.didReceiveAPIResults(businesses)
@@ -53,11 +54,11 @@ class APIController {
     }
     
     
-    func yelpClubsIn(town: String) {
+    func yelpClubsIn(town: String, optionalParams: Dictionary<String, String>) {
         var offset = 0
         var limit = 20
         var businessesTmp: NSMutableArray = NSMutableArray()
-        yelpClubsInLoop(town, offset: offset, limit: limit, businesses: businessesTmp)
+        yelpClubsInLoop(town, offset: offset, limit: limit, businesses: businessesTmp, otherParams: optionalParams)
     }
     
 }

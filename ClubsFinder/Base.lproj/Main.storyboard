@@ -256,11 +256,16 @@
                                 <action selector="handleCancelButton:" destination="0gz-cQ-NJW" id="6a5-yh-gAV"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Apply" id="czE-OV-4eq">
+                            <connections>
+                                <action selector="handleApplyButton:" destination="0gz-cQ-NJW" id="Gxm-QI-7z1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DeB-w8-eEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1513" y="1692"/>
+            <point key="canvasLocation" x="1569" y="1717"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ydo-F8-VaS">

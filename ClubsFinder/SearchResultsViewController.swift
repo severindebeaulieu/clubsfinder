@@ -9,18 +9,20 @@
 import UIKit
 import QuartzCore
 
-class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol {
+class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol, FiltersViewDelegate {
     
     @IBOutlet var appsTableView : UITableView?
     var businesses = [Business]()
     var api : APIController?
     var imageCache = [String : UIImage]()
+    var userLocation: UserLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         api = APIController(delegate: self)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        api!.yelpClubsIn("Morbihan")
+        self.userLocation = UserLocation()
+        api!.yelpClubsIn("Paris", optionalParams: getOptionalParameters())
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,20 +37,26 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
 //            cell.layer.transform = CATransform3DMakeScale(1,1,1)
 //        })
 //    }
+    
+    func getOptionalParameters() -> Dictionary<String, String> {
+        var parameters = Dictionary<String, String>()
+        for (key, value) in ClubsFilters.instance.parameters {
+            parameters[key] = value
+        }
+        return parameters
+    }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return businesses.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        println(indexPath.row)
         
         let cell = tableView.dequeueReusableCellWithIdentifier("SearchResultsCell") as SearchResultsCell
         
         let business = self.businesses[indexPath.row]
         
         cell.label1.text = business.name.capitalizedString
-//        println(business.location["address"])
         
         cell.label2.text = business.shortAddress
         cell.label3.text = business.phone
@@ -116,14 +124,24 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         })
     }
     
+    // Application of filters
+    func onFiltersDone(controller: FiltersViewController) {
+        self.businesses = []
+        api!.yelpClubsIn("Paris", optionalParams: getOptionalParameters())
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.destinationViewController is BusinessDetailsViewController) {
             var bDetailsViewController: BusinessDetailsViewController = segue.destinationViewController as BusinessDetailsViewController
             var businessIndex = appsTableView!.indexPathForSelectedRow()!.row
             var selectedBusiness = self.businesses[businessIndex]
             bDetailsViewController.business = selectedBusiness
-        } else {
-            println(segue.destinationViewController)
+        } else if (segue.destinationViewController is UINavigationController) {
+            let navigationController = segue.destinationViewController as UINavigationController
+            if navigationController.viewControllers[0] is FiltersViewController {
+                let controller = navigationController.viewControllers[0] as FiltersViewController
+                controller.delegate = self
+            }
         }
     }
     
