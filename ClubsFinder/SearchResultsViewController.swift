@@ -50,6 +50,10 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     
     func getOptionalParameters() -> Dictionary<String, String> {
         var parameters = Dictionary<String, String>()
+        self.userLocation.requestLocation()
+        parameters["latitude"] = "\(self.userLocation.latitude)"
+        parameters["longitude"] = "\(self.userLocation.longitude)"
+        println(parameters)
         for (key, value) in ClubsFilters.instance.parameters {
             parameters[key] = value
         }

@@ -72,13 +72,13 @@ class UserLocation: NSObject, CLLocationManagerDelegate {
     
     var latitude: Double {
         get {
-            return manager.latitude ?? 37.7710347
+            return manager.latitude ?? 48.8534100
         }
     }
     
     var longitude: Double {
         get {
-            return manager.longitude ?? -122.4040795
+            return manager.longitude ?? 2.3488000
         }
     }
     

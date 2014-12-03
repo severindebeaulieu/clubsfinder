@@ -16,18 +16,18 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="CF-180.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Tx-Ko-GFo">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CF-180.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Tx-Ko-GFo">
                     <rect key="frame" x="150" y="150" width="180" height="180"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="0.87058823528999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <color key="tintColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="0Tx-Ko-GFo" firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="9r4-Pm-ywn"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstItem="0Tx-Ko-GFo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="150" id="S7n-1Y-lWN"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstItem="0Tx-Ko-GFo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OZJ-pe-nNA"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="0Tx-Ko-GFo" secondAttribute="centerX" id="c5g-Ot-jOn"/>
+                <constraint firstItem="0Tx-Ko-GFo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i93-zQ-rne"/>
+                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="qUi-zP-hLq"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="rbu-nK-mfs"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
