@@ -36,6 +36,7 @@ class APIController {
             
             //If results, we call the delegate to print
             if (businesses.count > 0) {
+                println(businesses)
                 self.delegate.didReceiveAPIResults(businesses)
             }
             },

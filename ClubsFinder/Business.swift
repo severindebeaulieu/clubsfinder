@@ -18,9 +18,10 @@ class Business {
     var phone: String
     var location: NSDictionary
     var thumbnailImageURL: String
+    var display_phone: String
     
     
-    init(yelp_id: String, is_closed: Bool, name: String, url: String, phone: String, location: NSDictionary, thumbnailImageURL: String) {
+    init(yelp_id: String, is_closed: Bool, name: String, url: String, phone: String, location: NSDictionary, thumbnailImageURL: String, display_phone: String) {
         self.yelp_id = yelp_id
         self.is_closed = is_closed
         self.name = name
@@ -28,6 +29,7 @@ class Business {
         self.phone = phone
         self.location = location
         self.thumbnailImageURL = thumbnailImageURL
+        self.display_phone = display_phone
     }
     
     class func businessesWithJSON(allResults: NSArray) -> [Business] {
@@ -47,9 +49,10 @@ class Business {
                 var phone = result["phone"] as? String ?? ""
                 var location = result["location"] as? Dictionary<String, AnyObject>
                 var thumbnailImageURL = result["image_url"] as? String ?? ""
+                var display_phone = result["display_phone"] as? String ?? ""
 //                println(location)
 //                println("\(yelp_id), \(is_closed), \(name), \(url), \(phone), \(location), \(thumbnailImageURL), ")
-                var newBusiness = Business(yelp_id: yelp_id!, is_closed: is_closed, name: name, url: url, phone: phone, location: location!, thumbnailImageURL: thumbnailImageURL)
+                var newBusiness = Business(yelp_id: yelp_id!, is_closed: is_closed, name: name, url: url, phone: phone, location: location!, thumbnailImageURL: thumbnailImageURL, display_phone: display_phone)
                 businesses.append(newBusiness)
             }
         }

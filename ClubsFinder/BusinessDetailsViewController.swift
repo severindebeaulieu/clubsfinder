@@ -66,7 +66,8 @@ class BusinessDetailsViewController: UIViewController {
         case 1:
             cell.textLabel?.text = "🚘    Itinéraire"
         case 2:
-            cell.textLabel?.text = "📞    \(business.phone)"
+            var displayPhone = (business.display_phone != "") ? business.display_phone : business.phone
+            cell.textLabel?.text = "📞    \(displayPhone)"
         default:
             cell.textLabel?.text = ""
         }

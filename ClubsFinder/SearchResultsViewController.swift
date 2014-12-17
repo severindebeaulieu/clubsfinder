@@ -73,7 +73,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         cell.label1.text = business.name.capitalizedString
         
         cell.label2.text = business.shortAddress
-        cell.label3.text = business.phone
+        cell.label3.text = (business.display_phone != "") ? business.display_phone : business.phone
         
         cell.imageClub.layer.cornerRadius = 8;
         cell.imageClub.layer.borderWidth = 2;
