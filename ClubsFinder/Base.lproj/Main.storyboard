@@ -193,9 +193,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Jg-iY-07V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.99607843139999996" green="0.85098039219999999" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.99607843139999996" green="0.85098039219999999" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.98823529411" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -266,9 +265,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XMf-IJ-Cli">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.99607843139999996" green="0.85098039219999999" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.99607843139999996" green="0.85098039219999999" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.98823529411" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
