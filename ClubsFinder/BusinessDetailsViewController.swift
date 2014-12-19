@@ -88,4 +88,13 @@ class BusinessDetailsViewController: UIViewController {
             return
         }
     }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.destinationViewController is FullMapViewController) {
+            var bDetailsViewController: FullMapViewController = segue.destinationViewController as FullMapViewController
+            bDetailsViewController.business = self.business
+        }
+    }
+    
 }

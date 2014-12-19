@@ -34,6 +34,7 @@
 		86C8E1951A14CEE700CB549A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86C8E1891A14CEE700CB549A /* LaunchScreen.xib */; };
 		86C8E1961A14CEE700CB549A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86C8E18B1A14CEE700CB549A /* Main.storyboard */; };
 		86CD0AE21A432CE500B59335 /* CF-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 86CD0AE11A432CE500B59335 /* CF-180.png */; };
+		86CD0AE41A44735A00B59335 /* FullMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CD0AE31A44735A00B59335 /* FullMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		86C8E18A1A14CEE700CB549A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		86C8E18C1A14CEE700CB549A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		86CD0AE11A432CE500B59335 /* CF-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CF-180.png"; path = "Images.xcassets/AppIcon.appiconset/CF-180.png"; sourceTree = "<group>"; };
+		86CD0AE31A44735A00B59335 /* FullMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				0270480A19C8E08B00FDA1C5 /* SearchResultsViewController.swift */,
 				861670D61A190EED00E5994B /* BusinessDetailsViewController.swift */,
 				8690A4A61A2B70CE00291636 /* FiltersViewController.swift */,
+				86CD0AE31A44735A00B59335 /* FullMapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				8638E4E31A0D0F89008489B9 /* HMACSHA1Signature.m in Sources */,
 				868E25791A2DC9CD000710B8 /* ClubsFilters.swift in Sources */,
 				8638E4E81A0D0F89008489B9 /* OAuthSwiftHTTPRequest.swift in Sources */,
+				86CD0AE41A44735A00B59335 /* FullMapViewController.swift in Sources */,
 				8638E4E71A0D0F89008489B9 /* OAuthSwiftCredential.swift in Sources */,
 				8690A4A71A2B70CE00291636 /* FiltersViewController.swift in Sources */,
 				86A6D1BC1A1A3F43009DC249 /* BusinessDetailsBarsCell.swift in Sources */,
